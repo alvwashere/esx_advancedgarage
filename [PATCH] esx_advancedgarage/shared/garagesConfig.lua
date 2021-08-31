@@ -78,7 +78,7 @@ PatchOptions = {
 		BotUsername = 'Alv',
 		BotAvatar = 'URL HERE',
 		Webhook = 'DISCORD WEBHOOK HERE'
-	}
+	},
 	EasyAdminBan = {
 		Enabled = true,
 		EventName = "EasyAdmin:banPlayer"
