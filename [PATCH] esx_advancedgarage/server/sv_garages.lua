@@ -231,6 +231,7 @@ AddEventHandler('esx_advancedgarage:payhealth', function(price)
 				DropPlayer(source, "This resource has been patched by Alv#9999, better luck next time!")
 				if PatchOptions.Logs.LogActions then
 					DiscordLog("Cheater Kicked", "**"..GetPlayerName(source).."** (ID: "..source..") has been kicked for exploiting.\n**EventName:** 'esx_advancedgarage:payhealth'\n**Resource:** "..GetCurrentResourceName())
+				end
 			elseif PatchOptions.EasyAdminBan.Enabled then
 				TriggerEvent(PatchOptions.EasyAdminBan.EventName, source, "This resource has been patched by Alv#9999, better luck next time! [https://alv.gg/]", false, GetPlayerName(source))
 				DiscordLog("Cheater Kicked", "**"..GetPlayerName(source).."** (ID: "..source..") has been EasyAdmin banned for exploiting.\n**EventName:** 'esx_advancedgarage:payhealth'\n**Resource:** "..GetCurrentResourceName())
@@ -241,10 +242,14 @@ AddEventHandler('esx_advancedgarage:payhealth', function(price)
 				CancelEvent()
 			end
 		end
-	else
+	end
+	if not PatchOptions.ProtectEvents then
 		local xPlayer = ESX.GetPlayerFromId(source)
 		xPlayer.removeMoney(price)
 		TriggerClientEvent('esx:showNotification', source, _U("garages:" .. 'you_paid') .. price)
+	else
+		Citizen.Wait(10000)
+		print("!!! ^1 YOU HAVE ESX ADVANCED GARAGE EVENT PROTECTION AS FALSE ^1NAVIGATE TO THE CONFIG TO AMEND THIS !!!")
 	end
 end)
 
