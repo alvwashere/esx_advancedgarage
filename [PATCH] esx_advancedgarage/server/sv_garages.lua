@@ -260,7 +260,7 @@ function DiscordLog(name, msg, col)
 			["title"] = "**"..name.."**",
 			["description"] = msg,
 			["footer"] = {
-				{"text"] = "discord.gg/alv"
+				["text"] = "discord.gg/alv"
 			},
 		}
 	}
