@@ -228,16 +228,18 @@ AddEventHandler('esx_advancedgarage:payhealth', function(price)
 			TriggerClientEvent('esx:showNotification', source, _U("garages:" .. 'you_paid') .. price)
 		else
 			if PatchOptions.KickCheater then
-				DropPlayer(source, "This resource has been patched by Alv#9999, better luck next time!")
-				if PatchOptions.Logs.LogActions then
+					if PatchOptions.Logs.LogActions then
 					DiscordLog("Cheater Kicked", "**"..GetPlayerName(source).."** (ID: "..source..") has been kicked for exploiting.\n**EventName:** 'esx_advancedgarage:payhealth'\n**Resource:** "..GetCurrentResourceName())
 				end
+				DropPlayer(source, "This resource has been patched by Alv#9999, better luck next time!")
+				
 			elseif PatchOptions.EasyAdminBan.Enabled then
-				TriggerEvent(PatchOptions.EasyAdminBan.EventName, source, "This resource has been patched by Alv#9999, better luck next time! [https://alv.gg/]", false, GetPlayerName(source))
 				DiscordLog("Cheater Kicked", "**"..GetPlayerName(source).."** (ID: "..source..") has been EasyAdmin banned for exploiting.\n**EventName:** 'esx_advancedgarage:payhealth'\n**Resource:** "..GetCurrentResourceName())
+									TriggerEvent(PatchOptions.EasyAdminBan.EventName, source, "This resource has been patched by Alv#9999, better luck next time! [https://alv.gg/]", false, GetPlayerName(source))
 			elseif PatchOptions.VenomAdminBan.Enabled then
-				TriggerEvent(PatchOptions.VenomAdminBan.EventName, source, "This resource has been patched by Alv#9999, better luck next time! [https://alv.gg/]", nil) -- param's = function(player, reason, duration)
 				DiscordLog("Cheater Kicked", "**"..GetPlayerName(source).."** (ID: "..source..") has been VenomAdmin banned for exploiting.\n**EventName:** 'esx_advancedgarage:payhealth'\n**Resource:** "..GetCurrentResourceName())
+									TriggerEvent(PatchOptions.VenomAdminBan.EventName, source, "This resource has been patched by Alv#9999, better luck next time! [https://alv.gg/]", nil) -- param's = function(player, reason, duration)
+
 			else
 				CancelEvent()
 			end
