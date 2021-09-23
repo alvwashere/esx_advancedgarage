@@ -13,3 +13,5 @@ This is an older version of ESX AdvancedGarage (Credit: HumanTree92) which I hav
 # Credit
 
 Script originally made by https://github.com/humantree92 I am simply an editor.
+
+Fixed it then he updated the reapo and did not give me credits lol
