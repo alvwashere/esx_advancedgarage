@@ -77,7 +77,7 @@ PatchOptions = {
 		LogActions = true,
 		BotUsername = 'Alv',
 		BotAvatar = 'URL HERE',
-		Webhook = 'DISCORD WEBHOOK HERE'
+-- Moved to stop dumping
 	},
 	EasyAdminBan = {
 		Enabled = true,
