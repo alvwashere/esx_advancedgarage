@@ -1,3 +1,8 @@
+local webhook = "EDIT_HERE" -- Add your webhook here
+
+-- ######################
+-- DO NOT EDIT BELOW THIS 
+-- ######################
 ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -266,7 +271,7 @@ function DiscordLog(name, msg, col)
 			},
 		}
 	}
-	PerformHttpRequest(PatchOptions.Logs.Webhook, function(err, text, headers) end, 'POST', json.encode({username = PatchOptions.Logs.BotUsername, embeds = embed, avatar_url = PatchOptions.Logs.BotAvatar}), {['Content-Type'] = 'application/json'})
+	PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = PatchOptions.Logs.BotUsername, embeds = embed, avatar_url = PatchOptions.Logs.BotAvatar}), {['Content-Type'] = 'application/json'})
 end
 
 -- Modify State of Vehicles
